@@ -1,10 +1,11 @@
-package br.com.vocabulario.meaven;
+package br.com.vocabulario.util;
 
 import java.util.Scanner;
 
 /**
- * Esta classe tem como objetivo guardar alguns métodos do Scanner úteis neste projeto para facilitar a reutilização de código
- * e evitar alguns possiveis problemas futuros
+ * Esta classe tem como objetivo guardar alguns métodos do Scanner úteis neste
+ * projeto para facilitar a reutilização de código e evitar alguns possiveis
+ * problemas futuros
  * 
  * @author Miguel Arcanjo
  */
@@ -43,10 +44,18 @@ public class LeitorDeDados {
 	}
 
 	/**
+	 * faz a leitura de um inteiro que o usuario digitar
+	 * 
+	 * @return nextInt()
+	 */
+	public int pegarNumeroInteiroAntigo() {
+		return scanner.nextInt();
+	}
+
+	/**
 	 * fecha o Scanner
 	 */
 	public void fecharLeitor() {
 		scanner.close();
 	}
 }
-

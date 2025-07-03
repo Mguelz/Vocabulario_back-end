@@ -1,12 +1,14 @@
-package br.com.vocabulario.meaven;
+package br.com.vocabulario.teste;
+
+import br.com.vocabulario.view.ApresentaNome;
 
 /**
  * O usuario terá que acertar a tradução da palavra que o sistema apresentar para ele
  * Sempre aparecerá uma palavra em ingles, só  é prciso acertar a tradução para o português
  * 
- * @author Miguel Arcanjo 
+ * @author Miguel Arcanjo  
  */
-public class Application {
+public class ApresentaNomeTest {
 
 	public static void main(String[] args) {
 		ApresentaNome apresentaNome = new ApresentaNome();

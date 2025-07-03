@@ -1,0 +1,7 @@
+Instruções para rodar este projeto em sua máquina:
+
+1 - Ter o xampp instalado na maquina
+2 - Rodar o arquivo de script ("script_populado.sql") do banco de dados já com todos os dados populados na tabela
+3 - Rodar o programa
+
+É preciso estar com o servidor do APACHE e MYSQL rodando no XAMPP
