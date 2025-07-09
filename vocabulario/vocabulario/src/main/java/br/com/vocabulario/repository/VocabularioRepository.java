@@ -1,0 +1,70 @@
+package br.com.vocabulario.repository;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import br.com.vocabulario.model.VocabularioModel;
+
+@Repository
+public interface VocabularioRepository extends JpaRepository<VocabularioModel, Integer> {
+
+	// Busca pelo termo em português
+	Optional<VocabularioModel> findByPortugues(String portugues);
+
+	// Lista os primeiros 30 pares
+	List<VocabularioModel> findTop30ByOrderByIdAsc();
+
+	// Conta total de elementos
+	long count();
+
+	// Verifica se o ID existe
+	boolean existsById(Integer id);
+
+	// Busca somente a palavra em inglês
+	@Query("SELECT v.ingles FROM VocabularioModel v WHERE v.id = :id")
+	Optional<String> buscarInglesPorId(Integer id);
+
+	// Busca somente a palavra em português
+	@Query("SELECT v.portugues FROM VocabularioModel v WHERE v.id = :id")
+	Optional<String> buscarPortuguesPorId(Integer id);
+
+	// Lista todas as palavras em inglês
+	@Query("SELECT v.ingles FROM VocabularioModel v")
+	List<String> listarTodasPalavrasIngles();
+
+	// Atualização e inserção continuam sendo com save()
+}
+
+//@Repository
+//public interface VocabularioRepository extends JpaRepository<VocabularioModel, Integer> {
+//
+//    // Busca pelo termo em português
+//    Optional<VocabularioModel> findByPortugues(String portugues);
+//
+//    // Lista os primeiros 30 pares
+//    List<VocabularioModel> findTop30ByOrderByIdAsc();
+//
+//    // Conta total de elementos
+//    long count();
+//
+//    // Verifica se o ID existe
+//    boolean existsById(Integer id);
+//
+//    // Busca somente a palavra em inglês
+//    @Query("SELECT v.ingles FROM VocabularioModel v WHERE v.id = :id")
+//    Optional<String> buscarInglesPorId(Integer id);
+//
+//    // Busca somente a palavra em português
+//    @Query("SELECT v.portugues FROM VocabularioModel v WHERE v.id = :id")
+//    Optional<String> buscarPortuguesPorId(Integer id);
+//
+//    // Lista todas as palavras em inglês
+//    @Query("SELECT v.ingles FROM VocabularioModel v")
+//    List<String> listarTodasPalavrasIngles();
+//
+//    // Atualização e inserção continuam sendo com save()
+//}

@@ -1,0 +1,30 @@
+package br.com.vocabulario.service;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import br.com.vocabulario.model.VocabularioModel;
+import br.com.vocabulario.repository.VocabularioRepository;
+
+@Component
+public class IdDisponivel {
+
+	private List<Integer> idsDisponiveis = new ArrayList<>();
+
+	@Autowired
+	private VocabularioRepository repository;
+
+	public Integer sortearIdSemRepetir() {
+		if (idsDisponiveis.isEmpty()) {
+			List<VocabularioModel> todos = repository.findAll();
+			idsDisponiveis = todos.stream().map(VocabularioModel::getId).collect(Collectors.toList());
+			Collections.shuffle(idsDisponiveis); // embaralha os IDs
+		}
+		return idsDisponiveis.remove(0); // retorna e remove o próximo ID único
+	}
+}
