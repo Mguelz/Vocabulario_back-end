@@ -1,0 +1,3 @@
+DB_URL=jdbc:postgresql://ep-orange-shape-acdf0gzm-pooler.sa-east-1.aws.neon.tech/vocabulario?sslmode=require
+DB_USER=neondb_owner
+DB_PASS=npg_4idK5tFZpBql

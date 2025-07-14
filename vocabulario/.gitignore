@@ -31,3 +31,14 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Arquivos sensíveis
+.env
+application.properties
+
+# Outros arquivos que não devem ir pro Git
+/target/
+/bin/
+/.idea/
+/*.iml
+

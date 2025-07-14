@@ -1,0 +1,10 @@
+spring.application.name=vocabulario
+#spring.datasource.url=jdbc:mysql://localhost:3306/vocabulario
+spring.datasource.url=postgresql://neondb_owner:npg_4idK5tFZpBql@ep-orange-shape-acdf0gzm-pooler.sa-east-1.aws.neon.tech/vocabulario?sslmode=require&channel_binding=require
+# psql 'postgresql://neondb_owner:npg_4idK5tFZpBql@ep-orange-shape-acdf0gzm-pooler.sa-east-1.aws.neon.tech/vocabulario?sslmode=require&channel_binding=require'
+#spring.datasource.username=root
+spring.datasource.username=945507756m@gmail.com
+#spring.datasource.password=
+spring.datasource.password=manicraft
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
