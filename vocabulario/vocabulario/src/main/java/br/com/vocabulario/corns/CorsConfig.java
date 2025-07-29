@@ -13,7 +13,7 @@ public class CorsConfig {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/**") // libera todas as rotas
-						.allowedOrigins("http://localhost:3000", "https://vocabulario-front-end.onrender.com/") // origem do React
+						.allowedOrigins("http://localhost:3000", "https://vocabulario-front-end.onrender.com") // origem do React
 						.allowedMethods("GET", "POST", "PUT", "DELETE");
 			}
 		};
