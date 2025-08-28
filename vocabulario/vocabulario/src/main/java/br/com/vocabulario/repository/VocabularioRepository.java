@@ -33,7 +33,7 @@ public interface VocabularioRepository extends JpaRepository<VocabularioModel, I
 	Optional<String> buscarPortuguesPorId(Integer id);
 
 	// Lista todas as palavras em inglês
-	@Query("SELECT v.ingles FROM VocabularioModel v ORDER BY id ASC")
+	@Query("SELECT v.ingles FROM VocabularioModel v ORDER BY v.id ASC")
 	List<String> listarTodasPalavrasIngles();
 
 	// Atualização e inserção continuam sendo com save()
